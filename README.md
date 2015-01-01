@@ -31,7 +31,28 @@ timestamp. The job should not be started before this time.
 Creates a new job or returns a identical and returns the job identifier as
 
     { 
-      "job" : "707152582" 
+      "key" : "707152582" 
     }
 
-## 
+## `POST /queue/worker`
+
+Assigns a worker to the next job. Returns the assigned job, if one is available.
+
+    {
+      "job": {
+        "key": "707152582",
+        "type": "user",
+        "identifier": { name: "fceller" },
+        "data": { "url": "some url" }
+      }
+    }
+
+If no job is available, then `null` is returned in the attribute `job`.
+
+    {
+      "job": null
+    }
+
+## `DELETE /queue/job/:key`
+
+Marks a job as finished.

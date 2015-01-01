@@ -1,0 +1,20 @@
+{
+  "name": "queue-it",
+  "version": "1.0.0",
+  "description": "A Simple Queueing API.",
+  "author": "Frank Celler",
+  "thumbnail": "thumbnail.png",
+  "isSystem": false,
+  "engines": {
+    "arangodb": "~2.4"
+  },
+
+  "controllers": {
+    "/": "app.js"
+  },
+
+  "setup": "scripts/setup.js",
+  "teardown": "scripts/teardown.js",
+
+  "lib": "."
+}
